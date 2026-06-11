@@ -2,7 +2,7 @@
   "appid": "touristappid",
   "compileType": "miniprogram",
   "libVersion": "trial",
-  "projectname": "MiniAgentKit Booking Demo",
+  "projectname": "约小帮",
   "setting": {
     "es6": true,
     "enhance": true,

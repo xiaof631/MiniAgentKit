@@ -3,7 +3,7 @@
     "pages/index/index"
   ],
   "window": {
-    "navigationBarTitleText": "MiniAgentKit Demo",
+    "navigationBarTitleText": "约小帮",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#f6f7f9"

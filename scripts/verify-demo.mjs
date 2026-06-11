@@ -24,6 +24,7 @@ const appJson = readJson(join(demoDir, "app.json"));
 const mcpJson = readJson(join(skillDir, "mcp.json"));
 
 requireFile(join(demoDir, "AGENTS.md"));
+requireFile(join(demoDir, "assets/icon.png"));
 requireFile(join(demoDir, "page-meta.json"));
 requireFile(join(skillDir, "SKILL.md"));
 requireFile(join(skillDir, "index.js"));
@@ -33,6 +34,10 @@ requireFile(join(skillDir, "apis/createBooking.js"));
 
 if (appJson.lazyCodeLoading !== "requiredComponents") {
   fail("app.json must set lazyCodeLoading to requiredComponents.");
+}
+
+if (appJson.window?.navigationBarTitleText !== "约小帮") {
+  fail("app.json window.navigationBarTitleText must be 约小帮.");
 }
 
 const hasBookingSubpackage = appJson.subPackages?.some(

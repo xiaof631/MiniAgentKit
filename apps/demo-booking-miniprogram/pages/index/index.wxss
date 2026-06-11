@@ -8,6 +8,14 @@
   margin-bottom: 20px;
 }
 
+.app-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+}
+
 .title {
   display: block;
   color: #111111;

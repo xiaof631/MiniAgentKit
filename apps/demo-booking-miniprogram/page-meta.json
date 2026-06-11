@@ -2,8 +2,8 @@
   "pages": [
     {
       "path": "pages/index/index",
-      "name": "MiniAgentKit Demo 首页",
-      "description": "展示 MiniAgentKit Booking Skill 的验证说明。"
+      "name": "约小帮首页",
+      "description": "展示约小帮 Booking Skill 的验证说明。"
     }
   ]
 }

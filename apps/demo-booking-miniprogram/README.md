@@ -1,6 +1,8 @@
-# MiniAgentKit Booking Demo
+# 约小帮
 
-这是一个用于验证 MiniAgentKit 生成物的小程序 demo。它不是完整业务小程序，目标是检查生成的 SKILL 是否能放进微信小程序 AI 开发模式要求的工程结构中。
+约小帮是一个用于验证 MiniAgentKit 生成物的小程序 demo。它不是完整业务小程序，目标是检查生成的 SKILL 是否能放进微信小程序 AI 开发模式要求的工程结构中。
+
+产品方向：用 AI 帮用户自然语言预约服务、查询档期并确认提交。未来可以扩展为真实的预约服务小程序。
 
 ## 验证目标
 
@@ -11,6 +13,7 @@
 - `skills/booking-skill/mcp.json` 存在
 - `skills/booking-skill/apis` 和 `components` 存在
 - 可以用微信开发者工具打开项目
+- `assets/icon.png` 可作为小程序图标候选资产
 
 ## 使用方式
 

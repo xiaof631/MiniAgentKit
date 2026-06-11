@@ -1,7 +1,8 @@
 <view class="page">
   <view class="header">
-    <text class="title">MiniAgentKit Booking Demo</text>
-    <text class="subtitle">验证微信小程序 AI 开发模式 SKILL 工程结构</text>
+    <image class="app-icon" src="/assets/icon.png" mode="aspectFit"></image>
+    <text class="title">约小帮</text>
+    <text class="subtitle">用 AI 帮用户预约服务、查询档期并确认提交</text>
   </view>
 
   <view class="panel">

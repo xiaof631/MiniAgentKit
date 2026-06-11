@@ -1,6 +1,6 @@
-# MiniAgentKit Demo 全局提示词
+# 约小帮全局提示词
 
-本小程序提供一个预约服务 SKILL，用于验证 MiniAgentKit 生成的微信小程序 AI 开发模式工程结构。
+约小帮提供一个预约服务 SKILL，用于验证 MiniAgentKit 生成的微信小程序 AI 开发模式工程结构。
 
 服务范围：
 
