@@ -35,5 +35,6 @@ node packages/cli/dist/index.js eval generate --skill examples/booking-skill --o
 
 ## 参考
 
+- uni-app adapter 使用说明：[docs/uniapp-adapter.md](docs/uniapp-adapter.md)
 - 微信小程序 AI 开发模式：https://developers.weixin.qq.com/miniprogram/dev/ai/guide.html
 - 官方 demo：https://github.com/wechat-miniprogram/ai-mode-demo

@@ -2,6 +2,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { lintSkillDirectory } from "@mini-agent-kit/lint";
+import { patchUniappMpWeixin, prepareUniappSkill } from "@mini-agent-kit/uniapp-adapter";
 import { createBookingSkill } from "./booking-template.js";
 import { readOption } from "./options.js";
 
@@ -12,6 +13,8 @@ Usage:
   mak init
   mak create-skill booking --name booking-skill --output skills/booking-skill
   mak export wechat --skill skills/booking-skill
+  mak uniapp prepare --project <uniapp-root> --skill examples/booking-skill --name booking-skill
+  mak uniapp patch --project <uniapp-root> --dist <uniapp-root>/dist/build/mp-weixin --skill booking-skill
   mak lint skills/booking-skill
   mak eval generate --skill skills/booking-skill --out tests/booking.eval.json
 `);
@@ -135,6 +138,46 @@ function commandEval(args: string[]): void {
   console.log(`Generated eval cases at ${out}`);
 }
 
+function commandUniapp(args: string[]): void {
+  const subcommand = args[1];
+  const project = readOption(args, "--project");
+  if (!project) throw new Error("Missing --project <uniapp-root>");
+
+  if (subcommand === "prepare") {
+    const skillDir = readOption(args, "--skill");
+    if (!skillDir) throw new Error("Missing --skill <skill-dir>");
+    const result = prepareUniappSkill({
+      uniappRoot: project,
+      skillDir,
+      skillName: readOption(args, "--name"),
+      description: readOption(args, "--description"),
+      sourceSkillsDir: readOption(args, "--source-skills-dir")
+    });
+    console.log(`Prepared uni-app skill ${result.skillName} at ${result.sourceSkillDir}`);
+    return;
+  }
+
+  if (subcommand === "patch") {
+    const dist = readOption(args, "--dist");
+    const skillName = readOption(args, "--skill");
+    if (!dist) throw new Error("Missing --dist <mp-weixin-dist>");
+    if (!skillName) throw new Error("Missing --skill <skill-name>");
+    const result = patchUniappMpWeixin({
+      uniappRoot: project,
+      distDir: dist,
+      skillName,
+      description: readOption(args, "--description"),
+      sourceSkillsDir: readOption(args, "--source-skills-dir")
+    });
+    console.log(`Patched uni-app mp-weixin output for ${result.skillName}`);
+    console.log(`- skill: ${result.distSkillDir}`);
+    console.log(`- app.json: ${result.appJsonPath}`);
+    return;
+  }
+
+  throw new Error(`Unsupported uniapp command: ${subcommand ?? "(missing)"}`);
+}
+
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const command = args[0];
@@ -161,6 +204,9 @@ async function main(): Promise<void> {
         break;
       case "eval":
         commandEval(args);
+        break;
+      case "uniapp":
+        commandUniapp(args);
         break;
       default:
         throw new Error(`Unknown command: ${command}`);

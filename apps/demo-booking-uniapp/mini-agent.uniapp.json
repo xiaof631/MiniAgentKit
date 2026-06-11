@@ -1,0 +1,14 @@
+{
+  "skills": [
+    {
+      "name": "booking-skill",
+      "description": "帮助用户查询服务、选择档期并创建预约。",
+      "source": "src/skills/booking-skill",
+      "dist": "skills/booking-skill"
+    }
+  ],
+  "mpWeixin": {
+    "instruction": "AGENTS.md",
+    "pageMetadata": "page-meta.json"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "约小帮",
+  "appid": "__UNI__YUEXIAOBANG",
+  "description": "MiniAgentKit uni-app adapter demo",
+  "mp-weixin": {
+    "appid": "wx828e93770aa632f4"
+  }
+}
