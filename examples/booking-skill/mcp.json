@@ -1,0 +1,128 @@
+{
+  "apis": [
+    {
+      "name": "searchServices",
+      "description": "搜索可预约服务。按用户描述检索服务列表，返回 serviceId 供后续预约流程使用。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "description": "服务关键词，例如颈部理疗、肩颈放松。用户未给出关键词时可以为空。"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "services": {
+            "type": "array"
+          }
+        }
+      },
+      "_meta": {
+        "ui": {
+          "componentPath": "components/service-list/index"
+        },
+        "riskLevel": "low",
+        "requireUserConfirm": false
+      }
+    },
+    {
+      "name": "getAvailableSlots",
+      "description": "查询指定服务的可预约档期。serviceId 必须来自 searchServices 返回值，不得从自然语言编造。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "serviceId": {
+            "type": "string",
+            "description": "服务 ID，取自 searchServices 返回的 serviceId 原值。"
+          },
+          "date": {
+            "type": "string",
+            "description": "预约日期，格式 YYYY-MM-DD。用户未明确日期时不要填写。"
+          }
+        },
+        "required": [
+          "serviceId"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "slots": {
+            "type": "array"
+          }
+        }
+      },
+      "_meta": {
+        "ui": {
+          "componentPath": "components/slot-list/index"
+        },
+        "riskLevel": "low",
+        "requireUserConfirm": false
+      }
+    },
+    {
+      "name": "createBooking",
+      "description": "创建服务预约。仅当用户已确认服务、日期和时间后使用，执行前必须展示确认卡片。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "serviceId": {
+            "type": "string",
+            "description": "服务 ID，取自 searchServices 返回的 serviceId 原值。不要从用户自然语言推断。"
+          },
+          "date": {
+            "type": "string",
+            "description": "预约日期，格式 YYYY-MM-DD。"
+          },
+          "time": {
+            "type": "string",
+            "description": "预约时间，格式 HH:mm。"
+          }
+        },
+        "required": [
+          "serviceId",
+          "date",
+          "time"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "bookingId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "_meta": {
+        "ui": {
+          "componentPath": "components/booking-confirm/index"
+        },
+        "riskLevel": "medium",
+        "requireUserConfirm": true
+      }
+    }
+  ],
+  "components": [
+    {
+      "name": "service-list",
+      "path": "components/service-list/index",
+      "description": "服务列表卡片"
+    },
+    {
+      "name": "slot-list",
+      "path": "components/slot-list/index",
+      "description": "可预约档期卡片"
+    },
+    {
+      "name": "booking-confirm",
+      "path": "components/booking-confirm/index",
+      "description": "预约确认卡片"
+    }
+  ]
+}

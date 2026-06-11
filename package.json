@@ -1,0 +1,22 @@
+{
+  "name": "mini-agent-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Infrastructure toolkit for turning WeChat mini programs into AI-callable SKILL projects.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaof631/MiniAgentKit.git"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}
