@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="header">
+    <text class="title">MiniAgentKit Booking Demo</text>
+    <text class="subtitle">验证微信小程序 AI 开发模式 SKILL 工程结构</text>
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">验证项</view>
+    <view wx:for="{{checks}}" wx:key="*this" class="check-row">
+      <text class="dot"></text>
+      <text class="check-text">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">测试话术</view>
+    <text class="prompt">帮我预约明天下午 3 点的颈部理疗体验</text>
+  </view>
+</view>

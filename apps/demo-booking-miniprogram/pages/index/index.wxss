@@ -1,0 +1,66 @@
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  display: block;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.subtitle {
+  display: block;
+  margin-top: 8px;
+  color: #5f6673;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.panel {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.panel-title {
+  margin-bottom: 12px;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  margin-top: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #18a058;
+}
+
+.check-text,
+.prompt {
+  color: #303642;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.prompt {
+  display: block;
+}

@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "MiniAgentKit Demo",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f7f9"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "subPackages": [
+    {
+      "root": "skills/booking-skill",
+      "independent": true,
+      "pages": []
+    }
+  ],
+  "agent": {
+    "skills": [
+      {
+        "name": "booking-skill",
+        "description": "帮助用户查询服务、选择档期并创建预约。",
+        "path": "/skills/booking-skill"
+      }
+    ],
+    "instruction": "AGENTS.md",
+    "pageMetadata": "page-meta.json"
+  },
+  "sitemapLocation": "sitemap.json"
+}

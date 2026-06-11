@@ -1,0 +1,9 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "name": "MiniAgentKit Demo 首页",
+      "description": "展示 MiniAgentKit Booking Skill 的验证说明。"
+    }
+  ]
+}
