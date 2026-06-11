@@ -1,5 +1,5 @@
 {
-  "appid": "touristappid",
+  "appid": "wx828e93770aa632f4",
   "compileType": "miniprogram",
   "libVersion": "trial",
   "projectname": "约小帮",
@@ -7,6 +7,30 @@
     "es6": true,
     "enhance": true,
     "postcss": true,
-    "minified": true
-  }
+    "minified": true,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {}
 }

@@ -14,6 +14,8 @@ Skill DSL -> WeChat SKILL files -> lint -> eval cases
 
 本项目不是微信官方 SDK，不调用任何未公开接口。微信小程序 AI 开发模式仍以官方文档状态为准。
 
+后续真实微信 AI 开发模式测试节点记录在 [docs/follow-up-tasks.md](docs/follow-up-tasks.md)。当前 demo 可本地验证，但真实 SKILL 调用链路需要等待对应 appid 的开发模式审核/提审能力可用后继续。
+
 ## 快速开始
 
 ```bash
